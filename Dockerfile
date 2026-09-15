@@ -21,6 +21,13 @@ WORKDIR /src/llama.cpp
 
 RUN cmake -B build \
     -DCMAKE_BUILD_TYPE=Release \
+    -DGGML_NATIVE=OFF \
+    -DGGML_AVX=OFF \
+    -DGGML_AVX2=OFF \
+    -DGGML_AVX512=OFF \
+    -DGGML_BMI2=OFF \
+    -DGGML_FMA=OFF \
+    -DGGML_F16C=OFF \
     -DLLAMA_CURL=ON \
     -DLLAMA_BUILD_TESTS=OFF \
     -DLLAMA_BUILD_EXAMPLES=OFF \
